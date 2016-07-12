@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03F0F62A-4B71-4A68-913E-D42727E8CC7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sdl.Sdk.FileTypeSupport.Samples.SimpleTextExtension</RootNamespace>
+    <AssemblyName>Sdl.Sdk.FileTypeSupport.Samples.SimpleTextExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName />
+    <SccLocalPath />
+    <SccAuxPath />
+    <SccProvider />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(APPDATA)\SDL\SDL Trados Studio\11\Plugins\Packages\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(APPDATA)\SDL\SDL Trados Studio\11\Plugins\Packages\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sdl.Core.Globalization"><HintPath>$(ProgramFiles)\SDL\SDL Trados Studio\Studio3\Sdl.Core.Globalization.dll</HintPath></Reference>
+    <Reference Include="Sdl.Core.PluginFramework"><HintPath>$(ProgramFiles)\SDL\SDL Trados Studio\Studio3\Sdl.Core.PluginFramework.dll</HintPath></Reference>
+    <Reference Include="Sdl.Core.Settings"><HintPath>$(ProgramFiles)\SDL\SDL Trados Studio\Studio3\Sdl.Core.Settings.dll</HintPath></Reference>
+    <Reference Include="Sdl.FileTypeSupport.Framework.Core"><HintPath>$(ProgramFiles)\SDL\SDL Trados Studio\Studio3\Sdl.FileTypeSupport.Framework.Core.dll</HintPath></Reference>
+    <Reference Include="Sdl.FileTypeSupport.Framework.Core.Settings"><HintPath>$(ProgramFiles)\SDL\SDL Trados Studio\Studio3\Sdl.FileTypeSupport.Framework.Core.Settings.dll</HintPath></Reference>
+    <Reference Include="Sdl.FileTypeSupport.Framework.Core.Utilities"><HintPath>$(ProgramFiles)\SDL\SDL Trados Studio\Studio3\Sdl.FileTypeSupport.Framework.Core.Utilities.dll</HintPath></Reference>
+    <Reference Include="Sdl.Sdk.FileTypeSupport.Samples.SimpleText"><HintPath>$(ProgramFiles)\SDL\SDL Trados Studio\Studio3\Sdl.Sdk.FileTypeSupport.Samples.SimpleText.dll</HintPath></Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BilingualContentProcessorStub.cs" />
+    <Compile Include="BilingualVerifierStub.cs" />
+    <Compile Include="NativeContentProcessorStub.cs" />
+    <Compile Include="NativeVerifierStub.cs" />
+    <Compile Include="PluginResources.Designer.cs">
+      <DependentUpon>PluginResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SimpleTextExtensionComponentBuilder.cs" />
+    <Compile Include="SimpleTextExtensionFileSniffer.cs" />
+    <Compile Include="SimpleTextExtensionPostTweaker.cs" />
+    <Compile Include="SimpleTextExtensionPreTweaker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pluginpackage.manifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PluginResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PluginResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(MSBuildExtensionsPath)\SDL\SDLTradosStudio\11\Sdl.Core.PluginFramework.Build.targets" />
+  <PropertyGroup>
+    <CreatePluginPackage>true</CreatePluginPackage>
+  </PropertyGroup>
+  <Target Name="AfterBuild">
+    <CreatePluginManifestTask ProjectDirectory="$(ProjectDir)" AssemblyFilePath="$(TargetPath)" PluginResxFilePath="$(ProjectDir)PluginResources.resx" />
+  </Target>
+</Project>

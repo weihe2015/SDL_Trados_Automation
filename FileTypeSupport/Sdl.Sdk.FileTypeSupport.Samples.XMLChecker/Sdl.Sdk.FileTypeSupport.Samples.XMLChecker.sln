@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.Sdk.FileTypeSupport.Samples.XMLChecker", "Sdl.Sdk.FileTypeSupport.Samples.XMLChecker.csproj", "{3DD31C48-CC09-4023-9867-CEBC77A60A98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DD31C48-CC09-4023-9867-CEBC77A60A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD31C48-CC09-4023-9867-CEBC77A60A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD31C48-CC09-4023-9867-CEBC77A60A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD31C48-CC09-4023-9867-CEBC77A60A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD984A3-B5C9-43D2-B933-EBE18E41D9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD984A3-B5C9-43D2-B933-EBE18E41D9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD984A3-B5C9-43D2-B933-EBE18E41D9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD984A3-B5C9-43D2-B933-EBE18E41D9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
